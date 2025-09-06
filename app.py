@@ -25,7 +25,7 @@ MAX_CONCURRENT_REQUESTS = 4
 # Configure Gemini
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-2.5-flash')
 else:
     logger.warning("GEMINI_API_KEY not set. AI features will not work.")
     model = None
