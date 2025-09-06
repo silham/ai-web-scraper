@@ -134,13 +134,13 @@ def process_with_ai(content: str, summarize: bool = False) -> str:
             prompt = f"""
             Please provide a concise summary of the following web content, highlighting the key points and main topics:
 
-            {content[:8000]}  # Limit content to avoid token limits
+            {content[:1000000]}
             """
         else:
             prompt = f"""
-            Please extract and organize the useful information from the following web content, removing any navigation elements, ads, or irrelevant content. Present the information in a clean, structured format:
+            Please extract and organize the useful information from the following web content, removing any navigation elements, ads, or irrelevant content. Present the information in a clean, structured format. Don't remove any part of the content that seems relevant.:
 
-            {content[:8000]}  # Limit content to avoid token limits
+            {content[:1000000]}
             """
         
         response = model.generate_content(prompt)
