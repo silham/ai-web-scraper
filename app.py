@@ -132,13 +132,12 @@ def process_with_ai(content: str, summarize: bool = False) -> str:
     try:
         if summarize:
             prompt = f"""
-            Please provide a concise summary of the following web content, highlighting the key points and main topics:
-
+            Please provide a concise summary of the following web content, highlighting the key points and main topics (Only output the summarized content, no explanations, no introductions):
             {content[:1000000]}
             """
         else:
             prompt = f"""
-            Please extract and organize the useful information from the following web content, removing any navigation elements, ads, or irrelevant content. Present the information in a clean, structured format. Don't remove any part of the content that seems relevant.:
+            Please extract and organize the useful information from the following web content, removing any navigation elements, ads, or irrelevant content. Present the information in a clean, structured format. Don't remove any part of the content that seems relevant. (Only output the content, no explanations, no introductions):
 
             {content[:1000000]}
             """
